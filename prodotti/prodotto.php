@@ -1,22 +1,22 @@
 <?php
 class Prodotto
 {
-    protected $nome;
-    protected $prezzo;
-    protected $categoria;
-    protected $tipo;
+    public $nome;
+    public $prezzo;
+    public $categoria;
+    public $tipo;
 
-    function __construct($_nome, $_prezzo,  $_categoria)
+    function __construct($_nome, $_prezzo, Categoria $_categoria)
     {
         $this->nome = $_nome;
         $this->prezzo = $_prezzo;
-        $this->categoria = $_categoria->getCategoria();
+        $this->categoria = $_categoria;
         $this->tipo = get_class($this);
     }
 }
 class Cibo extends Prodotto
 {
-    protected $scadenza;
+    public $scadenza;
     function __construct($_nome, $_prezzo, $_categoria, $_scadenza)
     {
         parent::__construct($_nome, $_prezzo, $_categoria);
@@ -26,7 +26,7 @@ class Cibo extends Prodotto
 
 class Gioco extends Prodotto
 {
-    protected $materiale;
+    public $materiale;
     function __construct($_nome, $_prezzo, $_categoria, $_materiale)
     {
         parent::__construct($_nome, $_prezzo, $_categoria);
@@ -36,7 +36,7 @@ class Gioco extends Prodotto
 
 class Cuccia extends Prodotto
 {
-    protected $dimensioni;
+    public $dimensioni;
     function __construct($_nome, $_prezzo, $_categoria, $_dimensioni)
     {
         parent::__construct($_nome, $_prezzo, $_categoria);

@@ -1,30 +1,16 @@
 <?php
 class Categoria
 {
-    protected $nome;
+    public $nome;
+    public $icona;
 
-    function __construct($_nome)
+    function __construct($_nome, $_icona)
     {
         $this->nome = $_nome;
+        $this->icona = $_icona;
     }
-    function setCategoria($_nome)
-    {
-        $this->nome = $_nome;
-    }
-    function getCategoria()
-    {
-        return $this->nome;
-    }
-}
-
-class Cani extends Categoria
-{
-}
-
-class Gatti extends Categoria
-{
-}
+};
 
 // categorie
-$categoriaCani = new Cani("Cani");
-$categoriaGatti = new Gatti("Gatti");
+$categoriaCani = new Categoria("Cani", '<i class="fa-solid fa-dog"></i>');
+$categoriaGatti = new Categoria("Gatti", '<i class="fa-solid fa-cat"></i>');
