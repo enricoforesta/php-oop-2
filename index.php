@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/categorie/categoria.php';
-require_once __DIR__ . '/prodotti/prodotto.php';
+require_once __DIR__ . '/models/categoria.php';
+require_once __DIR__ . '/models/prodotto.php';
 
 var_dump($tuttiProdotti)
 
@@ -25,9 +25,9 @@ var_dump($tuttiProdotti)
                     <div class="card">
                         <!-- <img src="..." class="card-img-top" alt="..."> -->
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $prodotto->nome ?></h5>
-                            <p class="card-text">Categoria: <?php echo $prodotto->tipo . ' ' . $prodotto->categoria->icona ?></p>
-                            <h5 class="card-text ">Prezzo: <?php echo $prodotto->prezzo ?> </h5>
+                            <h5 class="card-title"><?php echo $prodotto->get_Nome() ?></h5>
+                            <p class="card-text">Categoria: <?php echo $prodotto->get_Tipo() . ' ' . $prodotto->get_Categoria()->getIcona() ?></p>
+                            <h5 class="card-text ">Prezzo: <?php echo $prodotto->get_Prezzo() ?> </h5>
                             <a href="#" class="btn btn-primary">Aggiungi al carrello</a>
                         </div>
                     </div>
